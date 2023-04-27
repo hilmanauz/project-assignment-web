@@ -1,0 +1,15 @@
+{
+    "types": "Tipe",
+    "name": "Nama",
+    "height": "Tinggi",
+    "weight": "Berat",
+    "abilities": "Kemampuan",
+    "hp": "Nyawa",
+    "attack": "Serangan",
+    "defense": "Pertahanan",
+    "special-attack": "Serangan Spesial",
+    "special-defense": "Pertahanan Spesial",
+    "speed": "Kecepatan",
+    "evolution-section": "Bagian Evolusi",
+    "pokedex-type": "Tipe Pokédex"
+}

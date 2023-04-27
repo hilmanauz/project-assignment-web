@@ -3,7 +3,8 @@ module.exports = {
     defaultLocale: "id",
     localeDetection: false,
     pages: {
-        "*": ["common"],
+        "*": ["common", "stats", "navbar"],
         "/": ["home"],
+        "/pokemon": ["homepage"],
     },
 };

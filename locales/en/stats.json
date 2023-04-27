@@ -1,0 +1,15 @@
+{
+  "types": "Types",
+  "name": "Name",
+  "height": "Height",
+  "weight": "Weight",
+  "abilities": "Abilities",
+  "hp": "HP",
+  "attack": "Attack",
+  "defense": "Defense",
+  "special-attack": "Special Attack",
+  "special-defense": "Special Defense",
+  "speed": "Speed",
+  "evolution-section": "Evolution Section",
+  "pokedex-type": "Pokédex Type"
+}
