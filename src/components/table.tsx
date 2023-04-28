@@ -110,20 +110,16 @@ interface Data {
     types: Record<string, any>[];
 }
 
-function EnhancedTableToolbar({
-    setType,
-    type,
-}: {
-    type: string;
-    setType: React.Dispatch<React.SetStateAction<string>>;
-}) {
+function EnhancedTableToolbar() {
+    const router = useRouter();
     const { t } = useTranslation();
     const handleChangeType = React.useCallback(
         (event: React.ChangeEvent<unknown>, value: any) => {
-            setType(value.props.value);
+            router.push(value.props.value);
         },
         [],
     );
+    const type = router.query.type as string;
     return (
         <Toolbar
             style={{
@@ -148,7 +144,7 @@ function EnhancedTableToolbar({
             </Typography>
             <Select
                 variant="outlined"
-                value={type}
+                value={router.query.type}
                 placeholder="mama"
                 style={{
                     backgroundColor: typeColor[type],
@@ -182,7 +178,10 @@ export default function TablePokemon() {
     const [rowsPerPage, setRowsPerPage] = React.useState(10);
     const { t } = useTranslation();
     const router = useRouter();
-    const [type, setType] = React.useState(router.query.type as string);
+    const [type, setType] = React.useState("");
+    React.useEffect(() => {
+        setType(router.query.type as string);
+    }, [router.query.type]);
     const { data, isLoading } = useSWR(type, async (type: string) => {
         const { data: typeData } = await axios.get(
             `https://pokeapi.co/api/v2/type/${type}`,
@@ -221,7 +220,7 @@ export default function TablePokemon() {
 
     return (
         <Box sx={{ width: "100%", overflow: "hidden" }}>
-            <EnhancedTableToolbar setType={setType} type={type} />
+            <EnhancedTableToolbar />
             {isLoading ? (
                 <Box
                     display={"flex"}

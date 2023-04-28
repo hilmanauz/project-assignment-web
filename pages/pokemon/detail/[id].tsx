@@ -302,7 +302,7 @@ const DetailPokemon: FC = () => {
                                                 }}
                                                 onClick={() => {
                                                     router.push(
-                                                        `/pokemon/pokedex-type/${type.type.bane}`,
+                                                        `/pokedex-type/${type.type.name}`,
                                                     );
                                                 }}
                                                 fontWeight={"bold"}
